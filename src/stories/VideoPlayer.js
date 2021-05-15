@@ -14,7 +14,7 @@ const Textbox = {
   height: "85px",
   width: "258px",
   backgroundColor: "white",
-  border: "solid black 1px",
+  //border: "solid black 1px",
   marginLeft: "25px",
   textAlign: "center",
   alignItems: "center",

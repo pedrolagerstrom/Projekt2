@@ -21,7 +21,13 @@ paths:
               schema:
                 type: array
                 items:
-                  type: string
+                  properties:
+                    email:
+                      type: string
+                    firstName:
+                      type: string
+                    lastName:
+                      type: string
 
   /users/{id}:
     get:
@@ -53,9 +59,35 @@ paths:
                   type: string
                 password:
                   type: string
+                firstName:
+                  type: string
+                lastName:
+                  type: string
       responses:
         "201":
           description: Created
+
+    /users/{id}:
+    put:
+      summary: Change a user by ID.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+                firstName:
+                  type: string
+                lastName:
+                  type: string
+      responses:
+        "201":
+          description: Ok
 
   /videos:
     get:
@@ -69,7 +101,11 @@ paths:
               schema:
                 type: array
                 items:
-                  type: string
+                  properties:
+                    video:
+                      type: string
+                    description:
+                      type: string
 
   /videos/{id}:
     get:
@@ -99,7 +135,15 @@ paths:
               schema:
                 type: array
                 items:
-                  type: string
+                  properties:
+                    activity:
+                      type: string
+                    distance:
+                      type: string
+                    date:
+                      type: DateTime
+                    distanceTime:
+                      type: string
 
   /activities/{id}:
     get:
@@ -133,8 +177,30 @@ paths:
                   type: string
                 date:
                   type: DateTime
-                time:
+                distanceTime:
                   type: string
       responses:
         "201":
           description: Created
+
+          /activities/{id}:
+    put:
+      summary: Change a activity by ID.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                activity:
+                  type: string
+                distance:
+                  type: string
+                date:
+                  type: DateTime
+                distanceTime:
+                  type: string
+      responses:
+        "201":
+          description: Ok

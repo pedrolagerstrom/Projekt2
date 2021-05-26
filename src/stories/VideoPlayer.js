@@ -1,9 +1,11 @@
 import React from "react";
+import PlayIcons from "./icons/play";
 
 const Container = {
   display: "flex",
 };
 const Video = {
+  position: "relative",
   height: "85px",
   width: "85px",
   backgroundColor: "grey",
@@ -23,9 +25,19 @@ const Textbox = {
   fontSize: "14px",
 };
 
+const PlayButton = {
+  position: "absolute",
+  top: "30px",
+  left: "30px",
+};
+
 const VideoPlayer = ({ children }) => (
   <div style={Container}>
-    <div style={Video}></div>
+    <div style={Video}>
+      <div style={PlayButton}>
+        <PlayIcons />
+      </div>
+    </div>
     <div style={Textbox}>{children}</div>
   </div>
 );
